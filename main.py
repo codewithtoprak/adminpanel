@@ -247,11 +247,15 @@ def giris():
             veriler={}
             with open("personel.txt","r",encoding="utf-8") as dosya:
                 satirlar=dosya.readlines()
-
+            
                 for satir in satirlar:
                     satir=satir.strip()
-                    isim,sifre=satir.split(",")
-                    veriler[isim]=sifre
+                    if satir:
+                        try:
+                            isim,sifre=satir.split(",")
+                            veriler[isim]=sifre
+                        except ValueError:
+                            continue
 
             if kullaniciadi in veriler and parola==veriler[kullaniciadi]:
                 bilgi.config(text="Personel Ekranına Yönlendiriliyorsunuz...")
