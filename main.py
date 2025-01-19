@@ -278,6 +278,7 @@ def personel():
                 kullaniciadi=kullanicientry.get()
                 eklenecek=kullaniciadi+","+ everi+"\n"
                 dosya.write(eklenecek)
+                veribilgi.config(text="Veri Başarıyla Eklendi.")
             else:
                 messagebox.showerror("Hata","Gireceğiniz Değer 0-1000 Arası Olmalıdır!")
 
@@ -298,6 +299,8 @@ def personel():
     verientry.place(x=90,y=80)
     veributon=Button(perekran,text="Veri Ekle", width=20,relief="groove",command=veriekle)
     veributon.place(x=77,y=120)
+    veribilgi=Label(perekran,text="")
+    veribilgi.place(x=95,y=270)
 
     perimg=Image.open("personel.png")
     perimg=perimg.resize((100,100))
