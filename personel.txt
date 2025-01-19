@@ -1,0 +1,4 @@
+ahmet,1010
+mehmet,1212
+ali,2424
+mahmut,1818
